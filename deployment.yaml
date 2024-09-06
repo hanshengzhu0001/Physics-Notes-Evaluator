@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prediction-with-ner
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prediction-with-ner
+  template:
+    metadata:
+      labels:
+        app: prediction-with-ner
+    spec:
+      containers:
+      - name: prediction-with-ner
+        image: gcr.io/woven-grail-428923-b2/prediction-with-ner
+        ports:
+        - containerPort: 8080
+        env:
+        - name: ENV_NAME
+          value: "World"

@@ -1,0 +1,15 @@
+apiVersion: skaffold/v2beta10
+kind: Config
+metadata:
+  name: prediction-with-ner
+build:
+  artifacts:
+    - image: gcr.io/woven-grail-428923-b2/prediction-with-ner
+      context: .
+      docker:
+        dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+      - deployment.yaml
+      - service.yaml

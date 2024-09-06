@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handwritten Notes Quality Checker</title>
+</head>
+<body>
+    <h1>Handwritten Notes Quality Checker</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file">Upload your handwritten notes (PDF):</label>
+        <input type="file" id="file" name="file" accept="application/pdf" required><br><br>
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" placeholder="e.g., biology" required><br><br>
+        <button type="submit">Upload</button>
+    </form>
+    <div id="report"></div>
+</body>
+</html>
